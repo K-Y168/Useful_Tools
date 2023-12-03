@@ -1,6 +1,6 @@
-:‹@Ší‚É‚æ‚Á‚Ä•Ï‰»‚·‚éƒŒƒWƒXƒgƒŠƒpƒX‚ğŠÂ‹«•Ï”HOGE‚ÉŠi”[‚·‚éƒvƒƒOƒ‰ƒ€
+::::æ©Ÿå™¨ã«ã‚ˆã£ã¦å¤‰åŒ–ã™ã‚‹ãƒ¬ã‚¸ã‚¹ãƒˆãƒªãƒ‘ã‚¹ã‚’ç’°å¢ƒå¤‰æ•°HOGEã«æ ¼ç´ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 
-::ŠÇ—ÒŒ ŒÀ‚É¸Ši
+::ç®¡ç†è€…æ¨©é™ã«æ˜‡æ ¼
 
 whoami /priv | find "SeDebugPrivilege" > nul
 if %errorlevel% neq 0 (
@@ -9,22 +9,22 @@ exit
 )
 
 
-::ƒŒƒWƒXƒgƒŠ‚ÌŒŸõ’l‚ÅŒÅ’è‚Ì•¶š—ñ‚ğŒŸõ‚µ‚Äuhoge.txtv‚ÉŠi”[
+::ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã®æ¤œç´¢å€¤ã§å›ºå®šã®æ–‡å­—åˆ—ã‚’æ¤œç´¢ã—ã¦ã€Œhoge.txtã€ã«æ ¼ç´
 
 REG QUERY HKU /f S-1-5-21 > %USERPROFILE%\hoge.txt
 
 
-::uhoge.txtv‚Ì’l‚ğpowershell‚Å‰ÁH‚µAuhoge2.txtv‚ÉŠi”[
+::ã€Œhoge.txtã€ã®å€¤ã‚’powershellã§åŠ å·¥ã—ã€ã€Œhoge2.txtã€ã«æ ¼ç´
 
-@powershell -command "gc "C:\Users\%USERNAME%\hoge.txt"@| ? { $_  -notmatch '<<íœ‚µ‚½‚¢s‚ÉŠÜ‚Ü‚ê‚é’l>>'@-and $_ -notmatch '<<íœ‚µ‚½‚¢s‚ÉŠÜ‚Ü‚ê‚é’l>>' -and $_ -ne '' }" > "C:\Users\%USERNAME%\hoge2.txt"
+@powershell -command "gc "C:\Users\%USERNAME%\hoge.txt"ã€€| ? { $_  -notmatch '<<å‰Šé™¤ã—ãŸã„è¡Œã«å«ã¾ã‚Œã‚‹å€¤>>'ã€€-and $_ -notmatch '<<å‰Šé™¤ã—ãŸã„è¡Œã«å«ã¾ã‚Œã‚‹å€¤>>' -and $_ -ne '' }" > "C:\Users\%USERNAME%\hoge2.txt"
 
 
-::uhoge2.txtv‚Ì’l‚ğ•Ï”HOGE‚ÉŠi”[
+::ã€Œhoge2.txtã€ã®å€¤ã‚’å¤‰æ•°HOGEã«æ ¼ç´
 
 for /f "usebackq delims=;" %%A in ("C:\Users\%USERNAME%\hoge2.txt") do (set HOGE=%%A)
 
 
-::‰¼ì¬‚µ‚½.txtƒtƒ@ƒCƒ‹‚ğíœ
+::ä»®ä½œæˆã—ãŸ.txtãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤
 
 del /s /q "%USERPROFILE%\hoge.txt"
 
